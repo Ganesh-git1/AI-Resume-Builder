@@ -1,3 +1,7 @@
+import os
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,9 +60,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 import os
 from pathlib import Path
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
