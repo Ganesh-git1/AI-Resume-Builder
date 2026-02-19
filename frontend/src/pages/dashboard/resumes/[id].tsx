@@ -25,7 +25,7 @@ const EditResume = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await fetch(`http://127.0.0.1:8000/api/resumes/${id}/`, {
+        const res = await fetch(`https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/${id}/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -54,7 +54,7 @@ const EditResume = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`http://127.0.0.1:8000/api/resumes/${id}/update/`, {
+      const res = await fetch(`https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/${id}/update/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

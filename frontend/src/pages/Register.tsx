@@ -14,7 +14,7 @@ const Register = () => {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/api/auth/register/", {
+    const res = await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/auth/register/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

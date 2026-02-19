@@ -16,7 +16,7 @@ const Jobs = () => {
       try {
         const token = localStorage.getItem("access");
 
-        const res = await fetch("http://127.0.0.1:8000/api/jobs/matches/", {
+        const res = await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/jobs/matches/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -32,7 +32,7 @@ const Jobs = () => {
       try {
         const token = localStorage.getItem("access");
 
-        const res = await fetch("http://127.0.0.1:8000/api/applications/list/", {
+        const res = await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/applications/list/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -57,7 +57,7 @@ const Jobs = () => {
       const token = localStorage.getItem("access");
 
       // 1️⃣ get user's resume
-      const resResume = await fetch("http://127.0.0.1:8000/api/resumes/list/", {
+      const resResume = await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/list/", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -85,7 +85,7 @@ const Jobs = () => {
 
 
       // 2️⃣ apply to job
-      const res = await fetch("http://127.0.0.1:8000/api/applications/apply/", {
+      const res = await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/applications/apply/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

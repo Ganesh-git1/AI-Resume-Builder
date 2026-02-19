@@ -23,7 +23,7 @@ const Applications = () => {
   try {
     const token = localStorage.getItem("access");
 
-    await fetch(`http://127.0.0.1:8000/api/applications/${appId}/status/`, {
+    await fetch(`https://ai-resume-builder-backend-77p6.onrender.com/api/applications/${appId}/status/`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const Applications = () => {
       try {
         const token = localStorage.getItem("access");
 
-        const res = await fetch("http://127.0.0.1:8000/api/applications/list/", {
+        const res = await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/applications/list/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

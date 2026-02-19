@@ -45,7 +45,7 @@ const ResumeBuilder = () => {
     const loadResume = async () => {
       const token = localStorage.getItem("access");
 
-      const res = await fetch(`http://127.0.0.1:8000/api/resumes/${id}/`, {
+      const res = await fetch(`https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -84,8 +84,8 @@ const ResumeBuilder = () => {
       const token = localStorage.getItem("access");
 
       const url = isEditMode
-        ? `http://127.0.0.1:8000/api/resumes/${id}/update/`
-        : "http://127.0.0.1:8000/api/resumes/create/";
+        ? `https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/${id}/update/`
+        : "https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/create/";
 
       const method = isEditMode ? "PUT" : "POST";
 
@@ -117,7 +117,7 @@ const ResumeBuilder = () => {
       for (let skill of skills) {
         if (!skill.name) continue;
 
-        await fetch("http://127.0.0.1:8000/api/resumes/skills/", {
+        await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/skills/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -136,7 +136,7 @@ const ResumeBuilder = () => {
       for (let exp of experiences) {
         if (!exp.company) continue;
 
-        await fetch("http://127.0.0.1:8000/api/resumes/experience/", {
+        await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/experience/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -157,7 +157,7 @@ const ResumeBuilder = () => {
       for (let edu of education) {
         if (!edu.school) continue;
 
-        await fetch("http://127.0.0.1:8000/api/resumes/education/", {
+        await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/education/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -175,7 +175,7 @@ const ResumeBuilder = () => {
       }
       // SAVE PROJECTS
       for (let proj of projects) {
-        await fetch("http://127.0.0.1:8000/api/resumes/projects/", {
+        await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/projects/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -12,7 +12,7 @@ const Resumes = () => {
       try {
         const token = localStorage.getItem("access");
 
-        const res = await fetch("http://127.0.0.1:8000/api/resumes/list/", {
+        const res = await fetch("https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/list/", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -32,7 +32,7 @@ const Resumes = () => {
 
     const token = localStorage.getItem("access");
 
-    await fetch(`http://127.0.0.1:8000/api/resumes/${id}/delete/`, {
+    await fetch(`https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/${id}/delete/`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -106,7 +106,7 @@ const Resumes = () => {
                   const token = localStorage.getItem("access");
 
                   const res = await fetch(
-                    `http://127.0.0.1:8000/api/resumes/${resume.id}/generate-pdf/`,
+                    `https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/${resume.id}/generate-pdf/`,
                     { headers: { Authorization: `Bearer ${token}` } }
                   );
 
@@ -131,7 +131,7 @@ const Resumes = () => {
                   const token = localStorage.getItem("access");
 
                   const res = await fetch(
-                    `http://127.0.0.1:8000/api/resumes/${resume.id}/suggestions/`,
+                    `https://ai-resume-builder-backend-77p6.onrender.com/api/resumes/${resume.id}/suggestions/`,
                     { headers: { Authorization: `Bearer ${token}` } }
                   );
 
