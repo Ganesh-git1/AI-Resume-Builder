@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-9x2@sample$secret!key#2026@airesume'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']  # Change later to your render domain
+ALLOWED_HOSTS = ['*']  # Later replace with your Render domain
 
 
 # ===============================
@@ -59,6 +59,26 @@ MIDDLEWARE = [
 
 
 # ===============================
+# TEMPLATES (🔥 REQUIRED FOR ADMIN)
+# ===============================
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],  # optional folder
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
+# ===============================
 # URLS & WSGI
 # ===============================
 ROOT_URLCONF = 'config.urls'
@@ -80,12 +100,12 @@ DATABASES = {
 # STATIC FILES
 # ===============================
 STATIC_URL = '/static/'
-
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+# ⚠ REMOVE STATICFILES_DIRS (caused warning on Render)
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+# ]
 
 
 # ===============================
@@ -102,6 +122,12 @@ AUTH_USER_MODEL = 'accounts.User'
 
 
 # ===============================
+# DEFAULT PRIMARY KEY FIX
+# ===============================
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# ===============================
 # REST FRAMEWORK
 # ===============================
 REST_FRAMEWORK = {
@@ -109,6 +135,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
